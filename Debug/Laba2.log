@@ -1,5 +1,5 @@
 ﻿  Laba2.cpp
-C:\Users\Tommi\source\repos\Laba2\Laba2\Laba2.cpp(90,45): warning C4244: аргумент: преобразование "genType" в "float", возможна потеря данных
+C:\Users\Tommi\source\repos\Laba2\Laba2\Laba2.cpp(99,45): warning C4244: аргумент: преобразование "genType" в "float", возможна потеря данных
           with
           [
               genType=double
