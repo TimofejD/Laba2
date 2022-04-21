@@ -21,23 +21,19 @@ void RenderSceneCB()
 		sinf(scale), 0.0f, 0.0f, 1.0f
 	);
 	glm::mat4 RotateMatrixZ(cosf(scale), sinf(scale), 0.0f, 0.0f,
-		-sinf(scale), cosf(scale), 0.0f, 0.0f,
-		0.0f, 0.0f, 1.0f, 0.0f,
-		0, 0.0f, 0.0f, 1.0f);
+							-sinf(scale), cosf(scale), 0.0f, 0.0f,
+							0.0f, 0.0f, 1.0f, 0.0f,
+							0, 0.0f, 0.0f, 1.0f);
 	glm::mat4 RotateMatrixY(cosf(scale), sinf(scale), 0.0f, 0.0f,
-		0.0f, 1.0f, 0.0f, 0.0f,
-		-sinf(scale), cosf(scale), 1.0f, 0.0f,
-		0, 0.0f, 0.0f, 1.0f);
+							0.0f, 1.0f, 0.0f, 0.0f,
+							-sinf(scale), cosf(scale), 1.0f, 0.0f,
+							0, 0.0f, 0.0f, 1.0f);
 	glm::mat4 RotateMatrixX(1.0f, 0.0f, 0.0f, 0.0f,
-		0.0f, cosf(scale), -sinf(scale), 0.0f,
-		0.0f, sinf(scale), cosf(scale), 0.0f,
-		0.0f, 0.0f, 0.0f, 1.0f);
-	glm::mat4 ScaleMatrix(sinf(scale), 0.0f, 0.0f, 0.0f,
-		0.0f, sinf(scale), 0.0f, 0.0f,
-		0.0f, 0.0f, sinf(scale), 0.0f,
-		0.0f, 0.0f, 0.0f, 1.0f);
+							0.0f, cosf(scale), -sinf(scale), 0.0f,
+							0.0f, sinf(scale), cosf(scale), 0.0f,
+							0.0f, 0.0f, 0.0f, 1.0f);
 
-	glm::mat4x4 Matrix = transformMatrix * RotateMatrixZ * RotateMatrixY * RotateMatrixX * ScaleMatrix;
+	glm::mat4x4 Matrix = transformMatrix /** RotateMatrixZ * RotateMatrixY * RotateMatrixX*/;
 
 	glLoadMatrixf(reinterpret_cast<const float*>(&Matrix));
 
