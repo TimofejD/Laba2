@@ -221,7 +221,8 @@ glm::mat4x4 RotMat(float RotateX, float RotateY, float RotateZ)
 
 *p.Rotate()* - set parameters that change our transformation matrix to rotate our figure
 
-*p.SetPerspectiveProj()* - set parameters that change our transformation matrix to set the perspective projection
+*p.SetPerspectiveProj(10.0f, WINDOW_WIDTH, WINDOW_HEIGHT, -100.0f, 100.0f)* - set parameters that change our transformation matrix to set the perspective projection.
+**10.0f** - FOV, **WINDOW_WIDTH** - width of the screen, **WINDOW_HEIGHT** - height of the screen, **-100.0f** - zNear, **100.0f** -zFar.
 
 *CameraPos()* - set parameters to the vector  to set the camera position
 
