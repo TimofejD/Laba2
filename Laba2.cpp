@@ -120,20 +120,20 @@ public:
 		glm::vec3 crossed = { x, y, z };
 		return (crossed);
 	}
-	glm::vec3 Normalize(float x, float y, float z) {
-		float len = sqrtf(x * x + y * y + z * z);
-		x /= len;
-		y /= len;
-		z /= len;
-		glm::vec3 normalized = { x, y, z };
+	glm::vec3 Normalize(glm::vec3 v) {
+		float len = sqrtf(v.x * v.x + v.y * v.y + v.z * v.z);
+		v.x /= len;
+		v.y /= len;
+		v.z /= len;
+		glm::vec3 normalized = { v.x, v.y, v.z };
 		return (normalized);
 	}
 	glm::mat4x4 InitCameraTransform(const glm::vec3& Target, const glm::vec3& Up)
 	{
 		glm::vec3 N = Target;
-		N = Normalize(N.x, N.y, N.z);
+		N = Normalize(N);
 		glm::vec3 U = Up;
-		U = Normalize(U.x, U.y, U.z);
+		U = Normalize(U);
 		U = Cross(U,Target);
 		glm::vec3 V = Cross(N,U);
 		glm::mat4x4 CameraRotate(
