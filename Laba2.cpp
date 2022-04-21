@@ -50,11 +50,11 @@ public:
 		m_scale.z = ScaleZ;
 	}
 
-	void WorldPos(float x, float y, float z)
+	void WorldPos(float PosX, float PosY, float PosZ)
 	{
-		m_worldPos.x = x;
-		m_worldPos.y = y;
-		m_worldPos.z = z;
+		m_worldPos.x = PosX;
+		m_worldPos.y = PosY;
+		m_worldPos.z = PosZ;
 	}
 
 	void Rotate(float RotateX, float RotateY, float RotateZ)
