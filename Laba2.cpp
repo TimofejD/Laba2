@@ -32,8 +32,12 @@ void RenderSceneCB()
 							0.0f, cosf(scale), -sinf(scale), 0.0f,
 							0.0f, sinf(scale), cosf(scale), 0.0f,
 							0.0f, 0.0f, 0.0f, 1.0f);
+	glm::mat4 ScaleMatrix(sinf(scale), 0.0f, 0.0f, 0.0f,
+							0.0f, sinf(scale), 0.0f, 0.0f,
+							0.0f, 0.0f, sinf(scale), 0.0f,
+							0.0f, 0.0f, 0.0f, 1.0f);
 
-	glm::mat4x4 Matrix = transformMatrix /** RotateMatrixZ * RotateMatrixY * RotateMatrixX*/;
+	glm::mat4x4 Matrix = transformMatrix * RotateMatrixZ * RotateMatrixY * RotateMatrixX * ScaleMatrix;
 
 	glLoadMatrixf(reinterpret_cast<const float*>(&Matrix));
 
