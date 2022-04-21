@@ -13,9 +13,9 @@ using namespace std;
 
 glm::mat4x4 RotMat(float RotateX, float RotateY, float RotateZ)
 {
-	float x = glm::radians(RotateX);
-	float y = glm::radians(RotateY);
-	float z = glm::radians(RotateZ);
+	float x = asin(RotateX);
+	float y = asin(RotateY);
+	float z = asin(RotateZ);
 
 	glm::mat4x4 rx(1.0f, 0.0f, 0.0f, 0.0f,
 		0.0f, cosf(x), -sinf(x), 0.0f,
@@ -182,7 +182,7 @@ void RenderSceneCB()
 	Pipeline p;
 	p.Scale(sinf(scale * 0.1f), sinf(scale * 0.1f), sinf(scale * 0.1f));
 	p.WorldPos(0.0f, 0.0f, sinf(scale));
-	p.Rotate(sinf(scale) * 90.0f, sinf(scale) * 90.0f, sinf(scale) * 90.0f);
+	p.Rotate(sinf(scale), sinf(scale), 0.0f);
 	p.SetPerspectiveProj(10.0f, WINDOW_WIDTH, WINDOW_HEIGHT, -100.0f, 100.0f);
 	
 	glm::vec3 CameraPos(1.0f, 1.0f, 30.0f);
